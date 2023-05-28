@@ -1,9 +1,9 @@
-import Home from './Pages/HomePage';
+import Home from './Pages/HomePage/HomePage';
 import Movies from './Pages/MoviesPage';
 import MovieDetails from './Pages/MovieDetailsPage';
 import Cast from './Cast';
 import Reviews from './Reviews';
-import Layout from './Layout';
+import Layout from './Layout/Layout';
 import { Routes, Route } from 'react-router-dom';
 
 
