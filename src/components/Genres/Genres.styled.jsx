@@ -6,6 +6,7 @@ export const GenresBlock = styled.ul`
   align-items: center;
   justify-content: center;
   gap: 8px;
+  list-style: none;
 `;
 export const Genre = styled.li`
   background: linear-gradient(141.22deg, #ffc226 9.4%, #f84119 91.91%);

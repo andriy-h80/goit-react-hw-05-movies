@@ -9,6 +9,8 @@ export const MovieListItem = styled.li`
   margin: 0 auto;
   padding: 3px;
 
+  flex: 0 0 calc(25% - 20px);
+
   max-width: 100%;
   width: 260px;
   height: 100%;
@@ -96,24 +98,23 @@ export const ReleaseDate = styled.p`
 
 export const Rating = styled.div`
   position: absolute;
-  bottom: 38px;
-  top: 10px;
-  right: 10px;
+  bottom: 0px;
+  left: 0px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
   width: 42px;
-  height: 42px;
+  height: 24px;
 
   text-shadow: 0 0.4px 0.4px #000;
   border-radius: 50%;
-  padding: 4px;
+  padding: 0px;
 `;
 
 export const GenresBlock = styled.div`
   position: absolute;
-  bottom: 48px;
-  left: 10px;
+  bottom: 8px;
+  right: 5px;
 `;

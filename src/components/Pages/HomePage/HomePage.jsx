@@ -1,17 +1,16 @@
 import { useState, useEffect } from "react";
-import { getTrendingMovies } from '../../../services/getAPI';
+import { getTrendingMovies, getGenresMovies } from '../../../services/getAPI';
 import Loader from '../../Loader/Loader';
 import { HomeBlock } from './HomePage.styled';
 import { Title } from '../../Title/Title';
 import ErrorImageView from '../../ErrorImageView/ErrorImageView';
-// import MovieCard from '../../MovieCard/MovieCard';
 import MovieGallery from '../../MovieGallery/MovieGallery';
-
 
 const Home = () => {
     const [movies, setMovies] = useState();
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(false);
+    const [genres, setGenres] = useState([]);
       
 
     // get popular movies
@@ -31,6 +30,23 @@ const Home = () => {
     })();
   }, []);
 
+    // get genres
+    useEffect(() => {
+        (async function getGenres() {
+        try {
+            setIsLoading(true);
+            setError(null);
+
+            const genresData = await getGenresMovies();
+            setGenres(genresData);
+        } catch (error) {
+            setError('Something went wrong, please reload the page');
+        } finally {
+            setIsLoading(false);
+        }
+        })();
+    }, []);
+
     return (
     <HomeBlock>
         {isLoading && <Loader />}
@@ -38,15 +54,7 @@ const Home = () => {
         {!error && movies && movies.length > 0 && (
             <>
             <Title title='Trending today' />
-            <MovieGallery movies={movies} />
-            
-            {/* <MovieCardContainer>
-            {movies.map(movie => {
-                  return (
-                      <MovieCard key={movie.id} movie={movie} />
-                  );
-                })}
-            </MovieCardContainer> */}
+            <MovieGallery movies={movies} genres={genres} />
             </>
         )}
     </HomeBlock>

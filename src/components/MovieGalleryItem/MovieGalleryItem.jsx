@@ -9,8 +9,6 @@ import {
 } from './MovieGalleryItem.styled';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
-// import { RatingProgressbar } from 'components/RatingProgressbar/RatingProgressbar';
 import NoPoster from '../Image/no-poster.webp';
 import Genres from '../Genres/Genres';
 
@@ -43,7 +41,7 @@ const MovieGalleryItem = ({
         </MoviePoster>
         <MovieTitle>{title}</MovieTitle>
         {release_date && <ReleaseDate>{parseInt(release_date)}</ReleaseDate>}
-        {vote_average !== 0 && <Rating rating={vote_average?.toFixed(1)} />}
+        {vote_average !== 0 && <Rating>{parseFloat(vote_average)?.toFixed(1)}</Rating>}
       </Link>
       <GenresBlock>
         <Genres data={genre_ids?.slice(0, 1)} genres={genres} />

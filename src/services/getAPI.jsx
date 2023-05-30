@@ -72,3 +72,12 @@ export const getMoviesReviews = async movieId => {
     throw new Error('Oops, we don`t have any reviews');
   }
 };
+
+export const getGenresMovies = async () => {
+  try {
+    const { data } = await axios.get(`genre/movie/list`);
+    return data.genres;
+  } catch (error) {
+    throw new Error('Oops, there is no movie');
+  }
+};
