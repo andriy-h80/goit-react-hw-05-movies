@@ -29,7 +29,7 @@ const Reviews = () => {
     return (
         <>
         {isLoading && <Loader />}
-        {error && <ErrorImageView title="Oops, mistake... Please try again" />}
+        {error && <ErrorImageView message="Oops, mistake... Please try again" />}
         
         {movieReviews.length > 0 ? (
         <ReviewsList>
