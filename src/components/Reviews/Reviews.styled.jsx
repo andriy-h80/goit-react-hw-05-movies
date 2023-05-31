@@ -25,3 +25,9 @@ export const ReviewContent = styled.p`
   margin-top: 5px;
   margin-bottom: 5px;
 `;
+
+export const NoReviewsMessage = styled.p`
+  font-weight: 700;
+  margin-top: 10px;
+  margin-bottom: 5px;
+`;

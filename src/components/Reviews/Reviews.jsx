@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { getMoviesReviews } from '../../services/getAPI';
 import Loader from '../Loader/Loader';
 import ErrorImageView from '../ErrorImageView/ErrorImageView';
-import { ReviewsList, ReviewItem, ReviewsAuthor, ReviewContent } from './Reviews.styled';
+import { ReviewsList, ReviewItem, ReviewsAuthor, ReviewContent, NoReviewsMessage } from './Reviews.styled';
 
 const Reviews = () => {
     const { movieId } = useParams();
@@ -29,9 +29,9 @@ const Reviews = () => {
     return (
         <>
         {isLoading && <Loader />}
-        {error && <ErrorImageView message="Oops, mistake... Please try again" />}
+        {error && <ErrorImageView title="Oops, mistake... Please try again" />}
         
-        {movieReviews.length > 0 && (
+        {movieReviews.length > 0 ? (
         <ReviewsList>
           {movieReviews.map(review => (
             <ReviewItem key={review.id}>
@@ -40,6 +40,8 @@ const Reviews = () => {
             </ReviewItem>
           ))}
         </ReviewsList>
+        ) : (
+          <NoReviewsMessage>We don't have any reviews for this movie</NoReviewsMessage>
         )}
         </>
     )    
