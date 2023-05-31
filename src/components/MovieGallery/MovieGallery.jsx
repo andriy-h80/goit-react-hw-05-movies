@@ -6,7 +6,7 @@ import MovieGalleryItem from '../MovieGalleryItem/MovieGalleryItem';
 const MovieGallery = ({ movies, genres }) => {
   const location = useLocation();
   if (!movies) {
-    return null; // або відображайте компонент-заповнювач, якщо дані ще не завантажені
+    return null;
   }
   return (
     <MovieListStyled>

@@ -35,7 +35,7 @@ const Movies = () => {
             const data = await getMoviesByQuery(movieSearchName);
             setMovies(data.results);
           } catch (error) {
-            setError(error);
+            setError(error.message);
           } finally {
             setIsLoading(false);
           }
@@ -52,22 +52,12 @@ const Movies = () => {
             const genresData = await getGenresMovies();
             setGenres(genresData);
         } catch (error) {
-            setError('Something went wrong, please reload the page');
+            setError(error.message);
         } finally {
             setIsLoading(false);
         }
         })();
     }, []);
-    
-    // const updateQueryString = event => {
-    //     if (event.target.value === '') {
-    //         return setSearchParams({});
-    //     }
-    //     setSearchParams({query: event.target.value})
-        
-        // const nextParams = movie !== "" ? { movie } : {};
-        // setSearchParams(nextParams);
-    // };
 
     const handleSearchChange = value => {
         if (value === searchParams.get('query')) {

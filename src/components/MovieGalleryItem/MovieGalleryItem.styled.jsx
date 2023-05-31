@@ -6,14 +6,14 @@ export const MovieListItem = styled.li`
   flex-direction: column;
   align-items: center;
   gap: 8px;
-  margin: 0 auto;
+  
+  width: calc(25% - 10px);
+  margin-bottom: 20px;
   padding: 3px;
 
-  flex: 0 0 calc(25% - 20px);
-
-  max-width: 100%;
   width: 260px;
-  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
 
   border: none;
   transform: scale(1);
@@ -34,7 +34,6 @@ export const MovieListItem = styled.li`
 
   img {
     display: block;
-    // min-height: 100%;
     height: 100%;
     width: 100%;
 
@@ -53,7 +52,6 @@ export const MovieListItem = styled.li`
 `;
 
 export const MoviePoster = styled.div`
-  margin-bottom: 10px;
   overflow: hidden;
   border-radius: 4px;
 `;
@@ -85,7 +83,7 @@ export const ReleaseDate = styled.p`
   padding-left: 2px;
   padding-right: 2px;
 
-  background-color: #fff;
+  background-color: #eeea9e;
   box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
     0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
 
@@ -98,23 +96,28 @@ export const ReleaseDate = styled.p`
 
 export const Rating = styled.div`
   position: absolute;
-  bottom: 0px;
-  left: 0px;
+  top: 25px;
+  right: 5px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  width: 42px;
-  height: 24px;
+  width: 24px;
+  height: 16px;
+  padding-left: 2px;
+  padding-right: 2px;
 
+  color: #3f51b5;
+  background-color: #eeea9e;
   text-shadow: 0 0.4px 0.4px #000;
-  border-radius: 50%;
-  padding: 0px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 400;
 `;
 
 export const GenresBlock = styled.div`
   position: absolute;
-  bottom: 8px;
+  top: 10px;
   right: 5px;
 `;

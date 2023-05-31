@@ -1,9 +1,12 @@
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+
 
 export const Container = styled.div`
   max-width: 1200px;
   margin: 0 auto;  
   padding: 15px;
+  padding-left: 0;
 `;
 
 export const Header = styled.header`
@@ -15,14 +18,14 @@ export const Header = styled.header`
 export const Nav = styled.ul`
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 15px;
   list-style: none;
-  margin: 0;
+  margin: 10px;
   padding: 0;
 `;
 
-export const Link = styled.li`
-  padding: 15px;
+export const Link = styled(NavLink)`
+  padding: 8px;
   border-radius: 8px;
   text-decoration: none;
   color: #3f51b5;

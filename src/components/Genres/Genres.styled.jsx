@@ -9,8 +9,8 @@ export const GenresBlock = styled.ul`
   list-style: none;
 `;
 export const Genre = styled.li`
-  background: linear-gradient(141.22deg, #ffc226 9.4%, #f84119 91.91%);
-  color: rgb(0, 0, 0);
+  background: #eeea9e;
+  color: #3f51b5;
   text-shadow: 0 0.4px 0.4px #fff;
   font-size: 12px;
   font-weight: bold;

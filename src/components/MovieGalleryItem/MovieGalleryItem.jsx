@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  Rating,  
-  GenresBlock,
-  MovieListItem,
-  MoviePoster,
-  MovieTitle,
-  ReleaseDate,
-} from './MovieGalleryItem.styled';
+import { Rating, GenresBlock, MovieListItem, MoviePoster, MovieTitle, ReleaseDate } from './MovieGalleryItem.styled';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import NoPoster from '../Image/no-poster.webp';

@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from 'styled-components';
 
 export const ErrorBox = styled.div`
   display: flex;
@@ -24,5 +24,4 @@ export const ErrorImage = styled.img`
   height: auto;
   object-fit: contain;
   object-position: center;
-//   margin-bottom: 24px;
 `;

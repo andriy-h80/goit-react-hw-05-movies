@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { NavLink, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import { Container, Header, Nav, Link, Main } from './Layout.styled';
 import Loader from '../Loader/Loader';
 
@@ -8,12 +8,12 @@ const Layout = () => {
     <Container>
         <Header>
             <Nav>
-                <Link>
-                    <NavLink to='/'>Home</NavLink>
-                </Link>
-                <Link>
-                    <NavLink to='/movies'>Movies</NavLink>
-                </Link>
+                <li>
+                    <Link to='/'>Home</Link>
+                </li>
+                <li>
+                    <Link to='/movies'>Movies</Link>
+                </li>
             </Nav>
         </Header>
         <Main>

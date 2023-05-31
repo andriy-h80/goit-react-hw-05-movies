@@ -15,7 +15,7 @@ export const getTrendingMovies = async (page = 1) => {
     });
     return data;
   } catch (error) {
-    throw new Error('Oops, there is no movies');
+    throw new Error("Oops, there is no movies");
   }
 };
 
@@ -30,7 +30,7 @@ export const getMoviesByQuery = async (query, page = 1) => {
     });
     return data;
   } catch (error) {
-    throw new Error('Oops, there is no movie with that name');
+    throw new Error("Oops, there is no movie with that name");
   }
 };
 
@@ -43,7 +43,7 @@ export const getMoviesDetailsById = async movieId => {
     });
     return data;
   } catch (error) {
-    throw new Error('Oops, there is no movie with that name');
+    throw new Error("Oops, there is no movie with that name");
   }
 };
 
@@ -56,7 +56,7 @@ export const getMoviesCast = async movieId => {
     });
     return data.cast;
   } catch (error) {
-    throw new Error('Oops, there is no cast movie');
+    throw new Error("Oops, there is no cast movie");
   }
 };
 
@@ -69,7 +69,7 @@ export const getMoviesReviews = async movieId => {
     });
     return data.results;
   } catch (error) {
-    throw new Error('Oops, we don`t have any reviews');
+    throw new Error("We don't have any reviews for this movie");
   }
 };
 

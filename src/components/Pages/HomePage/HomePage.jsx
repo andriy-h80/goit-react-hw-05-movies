@@ -23,7 +23,7 @@ const Home = () => {
             const data = await getTrendingMovies();
             setMovies(data.results);
         } catch (error) {
-            console.log(error.message);
+            setError(error.message);
         } finally {
             setIsLoading(false);
         }
@@ -40,7 +40,7 @@ const Home = () => {
             const genresData = await getGenresMovies();
             setGenres(genresData);
         } catch (error) {
-            setError('Something went wrong, please reload the page');
+            setError(error.message);
         } finally {
             setIsLoading(false);
         }

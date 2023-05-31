@@ -59,4 +59,5 @@ export const SearchFormInput = styled.input`
         ::placeholder {
             font: inherit;
             font-size: 18px;
+        }
 `;
