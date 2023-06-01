@@ -14,6 +14,7 @@ const Movies = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
     const [genres, setGenres] = useState([]);
+    const [searchName, setSearchName] = useState([]);
 
     const [searchParams, setSearchParams] = useSearchParams();
 
@@ -33,12 +34,18 @@ const Movies = () => {
             setError(null);
 
             const data = await getMoviesByQuery(movieSearchName);
-            setMovies(data.results);
+            if (data.results.length === 0){
+              setError("No movies found");
+            } else {
+              setMovies(data.results);
+            }
           } catch (error) {
             setError(error.message);
           } finally {
             setIsLoading(false);
           }
+
+          setSearchName(movieSearchName)
         })();
       }, [searchParams]);
     
@@ -72,7 +79,7 @@ const Movies = () => {
         <MoviesBlock>
         <Searchbar onSubmit={handleSearchChange} />
         {isLoading && <Loader />}
-        {error && <ErrorImageView message="Oops, mistake... Please try again" />}    
+        {error  === "No movies found" && (<ErrorImageView message={`Sorry, we can't find ${searchName}`} />)}    
         {!error && movies && movies.length > 0 && (
             <>
             <Title title='We have the following movies:' />
